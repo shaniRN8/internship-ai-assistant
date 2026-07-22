@@ -49,12 +49,18 @@ Streamlit UI
 7. Final answer is shown in the Streamlit UI.
 
 ### Structured message example
-```json
+json
 {
   "intent": "cv_help",
   "query": "How do I write a CV for a software internship?",
   "needs_rag": true
 }
+
+(to be added)
+
+## 4. Agent Communication Flow
+(to be added)
+ 686370f3123fe8601400677c636420ae95201729
 
 ## 5. Model Selection Strategy
 | Sub-task | Model | Why chosen |
@@ -75,11 +81,18 @@ Streamlit UI
 ## 8. Live Demo
 Streamlit URL: (to be added)
 
-## 9. Design Patterns Used
+## 9. Design Patterns Used 
 - **Router pattern** → Router Agent decides which path to use
 - **Tool-use pattern** → RAG Worker uses vector DB retrieval as a tool
 - **ReAct pattern** → retrieve → reason → answer
 - **Reflection pattern** → Reflection Agent improves final answer
 
 ## 10. Known Limitations
-(to be added)
+- Router pattern
+- ReAct pattern
+- Tool-use pattern
+- Reflection pattern
+
+## 10. Known Limitations
+
+ 686370f3123fe8601400677c636420ae95201729
