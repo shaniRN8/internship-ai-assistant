@@ -64,11 +64,22 @@ json
 | Final answer generation | TBD | TBD |
 
 ## 6. RAG Pipeline
-- Corpus:
-- Chunking strategy:
-- Embedding model:
-- Vector store:
-- Retrieval evaluation:
+ Retrieval Evaluation
+
+The retrieval system was tested using five sample queries. 
+The top 3 retrieved chunks were inspected manually for relevance.
+
+| Query | Result | Observation |
+|---|---|---|
+| How do I write a CV for an IT internship? | Partial | Two CV-related chunks were retrieved, but one internship-application chunk was also returned. |
+| What are common internship interview questions? | Weak/Partial | The retrieved chunks mainly discussed internship applications rather than interview questions. |
+| How should I apply for internships? | Good | Relevant content was retrieved from the internship application guide. |
+| What should I include in a cover letter? | Good | Relevant cover-letter chunks were retrieved from the cover letter guide. |
+| What documents are needed for internship applications? | Partial | Internship application content was retrieved, but the exact document list was not always clear. |
+
+### Retrieval Limitation
+
+Some queries returned partially relevant chunks. This may be caused by the small corpus size, limited chunk count, and the absence of a re-ranking step. Future improvements include adding more interview-specific documents, improving chunking, and adding a re-ranker.
 
 ## 7. Setup Instructions
 (to be added)
