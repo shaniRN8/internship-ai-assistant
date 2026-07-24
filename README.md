@@ -30,29 +30,7 @@ Our system utilizes three specialized AI agents to handle student queries:
 ## 3. Architecture Diagram
       
       
-
-```text
-Student Question
-      |
-      v
-[Router Agent]  (Fast/Cheap Model)
-      |
-      |  structured message
-      |  {intent, query, needs_rag}
-      v
-[RAG Worker Agent]  (Strong Reasoning Model)
-      |
-      |  1) retrieve top document chunks
-      |  2) generate draft answer
-      v
-[Reflection Agent]
-      |
-      |  improve clarity + completeness
-      v
-Final Answer
-      |
-      v
-Streamlit UI
+![Architecture Diagram](docs/architecture.png)
 
 ## 4. Agent Communication Flow
 
