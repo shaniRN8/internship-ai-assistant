@@ -2,9 +2,7 @@ import streamlit as st
 import sys
 import os
 
-
-
-# Project paths
+# Base Directory & Source Path setup
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.join(BASE_DIR, "src")
 
@@ -12,8 +10,6 @@ if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 
 from agents.orchestrator import run_pipeline
-# Add src to path
-
 
 # Page config
 st.set_page_config(
@@ -23,34 +19,40 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
+# Custom CSS with explicit Dark/Light contrast fixes
 st.markdown("""
     <style>
     .main-header {
         font-size: 2.5rem;
         font-weight: bold;
-        color: #1f77b4;
+        color: #3b82f6;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
     .subheader {
-        font-size: 1.2rem;
-        color: #555;
+        font-size: 1.1rem;
+        color: #94a3b8;
         text-align: center;
         margin-bottom: 2rem;
     }
     .answer-box {
-        background-color: #f0f7ff;
+        background-color: #1e293b;
+        color: #f8fafc !important;
         padding: 1.5rem;
         border-radius: 10px;
-        border-left: 4px solid #1f77b4;
+        border-left: 5px solid #3b82f6;
         margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
     .source-box {
-        background-color: #e8f5e9;
+        background-color: #0f172a;
+        color: #cbd5e1 !important;
         padding: 1rem;
         border-radius: 8px;
         margin-top: 1rem;
+        border-left: 4px solid #10b981;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -78,124 +80,71 @@ with st.sidebar:
     st.write("""
     **Technology Stack:**
     - LangChain (Agent orchestration)
-    - Groq (LLM - Llama 3.1/3.3)
+    - Groq (LLM - Llama 3.1 / 3.3)
     - ChromaDB (Vector store)
     - Streamlit (UI)
     """)
 
-# Main content
-col1, col2 = st.columns([2, 1])
+# Main input layout
+st.subheader("Ask Your Question")
 
-with col1:
-    st.subheader("Ask Your Question")
-    
-    # Input options
-    input_method = st.radio(
-        "How would you like to ask?",
-        ["Type your question", "Select from examples"],
-        horizontal=True
-    )
-    
-    if input_method == "Type your question":
-        user_question = st.text_area(
-            label="Your question:",
-            placeholder="e.g., How do I write a good CV for a software internship?",
-            height=100,
-            key="user_input"
-        )
-    else:
-        example_questions = {
-            "CV Writing": "How do I write a good CV for an IT internship?",
-            "Interview Prep": "What are common internship interview questions?",
-            "How to Apply": "What's the process for applying to internships?",
-            "Cover Letter": "How should I write a cover letter for an internship?",
-            "Documents": "What documents are needed for internship applications?"
-        }
-        selected_example = st.selectbox(
-            "Choose an example question:",
-            list(example_questions.keys())
-        )
-        user_question = example_questions[selected_example]
-        st.info(f"**Selected:** {user_question}")
-
-with col2:
-    st.subheader("Quick Actions")
-    
-    # Example buttons
-    if st.button("❓ Ask Example Question", use_container_width=True):
-        user_question = "How do I write a good CV for an IT internship?"
-    
-    if st.button("🔄 Clear All", use_container_width=True):
-        st.rerun()
+user_question = st.text_area(
+    label="Your question:",
+    placeholder="e.g., How do I write a good CV for a software internship?",
+    height=100,
+    key="user_input"
+)
 
 # Process button
-st.divider()
-
-col_submit = st.columns([1, 1, 1])
-with col_submit[1]:
-    submit_button = st.button(
-        "🚀 Get Answer",
-        use_container_width=True,
-        type="primary"
-    )
+col1, col2, col3 = st.columns([1, 1, 1])
+with col2:
+    submit_button = st.button("🚀 Get Answer", use_container_width=True, type="primary")
 
 # Process query
 if submit_button and user_question:
-    with st.spinner("🤔 Processing your question..."):
+    with st.spinner("🤔 Processing your question with Multi-Agent System..."):
         try:
             # Run agent pipeline
             result = run_pipeline(user_question)
             
-            # Display results
             st.success("✅ Answer generated successfully!")
             
-            # Question echo
-            st.subheader("📝 Your Question")
-            st.write(f"**{user_question}**")
-            
-            # Intent detected
+            # Question Category
             st.subheader("🎯 Question Category")
-            intent_colors = {
-                "cv_help": "🔵",
-                "interview_help": "🟢",
-                "internship_info": "🟠",
-                "cover_letter": "🔴",
-                "general": "⚫"
+            intent_map = {
+                "cv_help": "🔵 CV Writing Help",
+                "interview_help": "🟢 Interview Preparation",
+                "internship_info": "🟠 Internship Guidance",
+                "cover_letter": "🔴 Cover Letter Assistance",
+                "general": "⚪ General Query"
             }
-            intent_emoji = intent_colors.get(result.get("intent", "general"), "⚫")
-            st.write(f"{intent_emoji} **{result.get('intent', 'general').replace('_', ' ').title()}**")
+            intent_display = intent_map.get(result.get("intent", "general"), "⚪ General Query")
+            st.markdown(f"### {intent_display}")
             
-            # Final answer
+            # Final Answer Display
             st.subheader("✨ Final Answer")
-            with st.container():
-                st.markdown(f"""
-                <div class="answer-box">
-                {result.get('final_answer', 'No answer generated')}
-                </div>
-                """, unsafe_allow_html=True)
+            answer_text = result.get('final_answer', 'No answer generated.')
             
-            # Sources
+            # Formatted text display inside clear container
+            st.markdown(f'<div class="answer-box">{answer_text}</div>', unsafe_allow_html=True)
+            
+            # Sources Display
             sources = result.get("sources", [])
             if sources:
                 st.subheader("📎 Sources Used")
-                with st.container():
-                    st.markdown("""
-                    <div class="source-box">
-                    """, unsafe_allow_html=True)
-                    for source in sources:
-                        st.write(f"📄 {source}")
-                    st.markdown("</div>", unsafe_allow_html=True)
+                source_list_html = "<br>".join([f"📄 {s}" for s in sources])
+                st.markdown(f'<div class="source-box">{source_list_html}</div>', unsafe_allow_html=True)
             
-            # Additional info
+            # Metrics
             col_info1, col_info2 = st.columns(2)
             with col_info1:
-                st.metric("Chunks Retrieved", result.get("chunks_used", 0))
+                st.metric("Chunks Retrieved from Vector DB", result.get("chunks_used", 0))
             with col_info2:
-                st.metric("Processing Status", "✅ Complete")
+                st.metric("Pipeline Status", "✅ Fully Reviewed")
         
         except Exception as e:
             st.error(f"❌ Error processing question: {str(e)}")
-            st.info("Please check your API keys and try again.")
+            st.info("Please check your Groq API key in .env file.")
 
 elif submit_button and not user_question:
     st.warning("⚠️ Please enter a question first!")
@@ -203,7 +152,7 @@ elif submit_button and not user_question:
 # Footer
 st.divider()
 st.markdown("""
-    <div style="text-align: center; color: #888; font-size: 0.9rem;">
-    🎓 Internship AI Assistant | Built with LangChain, Groq & Streamlit
+    <div style="text-align: center; color: #64748b; font-size: 0.9rem;">
+    🎓 Internship AI Assistant | Multi-Agent RAG System
     </div>
 """, unsafe_allow_html=True)
