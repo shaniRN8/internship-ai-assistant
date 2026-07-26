@@ -43,18 +43,11 @@ Our system utilizes three specialized AI agents to handle student queries:
 6. Reflection Agent reviews and improves the draft.
 7. Final answer is shown in the Streamlit UI.
 
-### Structured message example
-json
-{
-  "intent": "cv_help",
-  "query": "How do I write a CV for a software internship?",
-  "needs_rag": true
-}
 
-(to be added)
 
 ## 4. Agent Communication Flow
-(to be added)
+
+The system uses three specialized agents that exchange **structured messages** (not plain text).
  686370f3123fe8601400677c636420ae95201729
 
 ## 5. Model Selection Strategy
@@ -82,7 +75,21 @@ The top 3 retrieved chunks were inspected manually for relevance.
 Some queries returned partially relevant chunks. This may be caused by the small corpus size, limited chunk count, and the absence of a re-ranking step. Future improvements include adding more interview-specific documents, improving chunking, and adding a re-ranker.
 
 ## 7. Setup Instructions
-(to be added)
+ Prerequisites
+- Python 3.10+ (recommended: 3.11 or 3.12)
+- Git
+- A free [Groq API key](https://console.groq.com)
+
+1) Clone the repository
+2) Create and activate a virtual environment
+3) Install dependencies
+4) Configure environment variables
+5) Build the vector store (RAG knowledge base)
+6) (Optional) Test retrieval quality
+7) (Optional) Test agents individually
+8) Run the Streamlit app locally
+9) Streamlit Cloud deployment
+
 
 ## 8. Live Demo
 Streamlit URL:  https://internship-ai-assistant-yd74qsp7c9kxsyxrmxccxg.streamlit.app/
@@ -100,5 +107,18 @@ Streamlit URL:  https://internship-ai-assistant-yd74qsp7c9kxsyxrmxccxg.streamlit
 - Reflection pattern
 
 ## 10. Known Limitations
+
+| Limitation | Impact | Possible improvement |
+|-----------|--------|----------------------|
+| Relatively small knowledge corpus | Answers can be thin for niche questions | Expand `data/raw/` to 20+ high-quality domain documents |
+| No retrieval re-ranking | Sometimes a partially relevant chunk ranks above a better one | Add a re-ranker (cross-encoder or LLM scoring) |
+| No multi-turn memory | Each question is handled independently | Add session chat history / conversation memory |
+| Cold start on Streamlit Cloud | First load can take 1–3 minutes while embeddings/model initialize | Pre-build and cache the vector store more aggressively |
+| Limited Sri Lanka-specific content | Advice may be generic rather than local-market specific | Add local university/company internship guides |
+| English-focused corpus | Non-English queries are weaker | Add multilingual documents + multilingual embeddings |
+| Free-tier LLM constraints | Rate limits or occasional latency spikes on Groq free tier | Add retry/fallback model strategy |
+| PDF quality variance | Scanned/image-only PDFs extract poorly | Prefer text-based PDFs or add OCR |
+| Reflection can over-edit | Final answer may become more generic than the draft | Tighten reflection prompt / keep more of the draft |
+| No authentication / user accounts | Anyone with the link can use the public demo | Add auth if needed for production |
 
  686370f3123fe8601400677c636420ae95201729
