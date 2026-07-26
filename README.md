@@ -85,7 +85,7 @@ Some queries returned partially relevant chunks. This may be caused by the small
 (to be added)
 
 ## 8. Live Demo
-Streamlit URL: (to be added)
+Streamlit URL:  https://YOUR-APP-NAME.streamlit.app
 
 ## 9. Design Patterns Used 
 - **Router pattern** → Router Agent decides which path to use
