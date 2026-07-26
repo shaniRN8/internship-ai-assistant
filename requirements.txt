@@ -2,40 +2,11 @@ streamlit
 python-dotenv
 langchain
 langchain-community
-chromadb
-pypdf
-openai
-
-streamlit
-python-dotenv
-langchain
-langchain-community
 langchain-text-splitters
-langchain-openai
-<<<<<<< HEAD
 langchain-huggingface
 langchain-groq
-=======
 chromadb
 pypdf
-openai
-
-streamlit
-python-dotenv
-langchain
-langchain-community
-langchain-text-splitters
-langchain-openai
-langchain-huggingface
->>>>>>> e236ccca3af0cd59f2da267cf821e99a3e6a25f2
-sentence-transformers
-chromadb
-pypdf
-openai
-<<<<<<< HEAD
 groq
-=======
-
 sentence-transformers
-langchain-huggingface
->>>>>>> e236ccca3af0cd59f2da267cf821e99a3e6a25f2
+torch
