@@ -85,7 +85,7 @@ Some queries returned partially relevant chunks. This may be caused by the small
 (to be added)
 
 ## 8. Live Demo
-Streamlit URL:  https://internship-ai-assistant ∙ main ∙ app.py.streamlit.app
+Streamlit URL:  https://internship-ai-assistant-yd74qsp7c9kxsyxrmxccxg.streamlit.app/
 
 ## 9. Design Patterns Used 
 - **Router pattern** → Router Agent decides which path to use
