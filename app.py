@@ -19,6 +19,24 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Auto-build vector store if missing (for cloud deployment)
+@st.cache_resource
+def ensure_vector_store():
+    vector_dir = os.path.join(BASE_DIR, "data", "vectorstore")
+    
+    if not os.path.exists(vector_dir) or len(os.listdir(vector_dir)) == 0:
+        with st.spinner("🔨 Building knowledge base (first time only, ~2 min)..."):
+            from rag.ingest import load_documents, chunk_documents, create_vector_store
+            docs = load_documents()
+            if docs:
+                chunks = chunk_documents(docs)
+                create_vector_store(chunks)
+        st.success("✅ Knowledge base ready!")
+    return True
+
+# Call at startup
+ensure_vector_store()
+
 # Custom CSS with explicit Dark/Light contrast fixes
 st.markdown("""
     <style>
