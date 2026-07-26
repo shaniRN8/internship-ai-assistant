@@ -1,0 +1,12 @@
+LinkedIn Profile Guide for Internship Seekers
+
+1. Use a clear professional photo.
+2. Write a headline like: IT Undergraduate | Python | Web Development | Seeking Internship.
+3. Add a short About section with your interests, skills, and goals.
+4. List education with degree, university, and expected graduation year.
+5. Add projects with tech stack and GitHub links.
+6. Include skills: Python, Java, SQL, HTML, CSS, Git, communication.
+7. Request recommendations from lecturers or teammates if possible.
+8. Post or share learning updates occasionally.
+9. Follow companies and employees in your target field.
+10. Make sure contact info and portfolio links are easy to find.

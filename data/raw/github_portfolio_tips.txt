@@ -1,0 +1,12 @@
+GitHub Portfolio Tips for IT Interns
+
+1. Pin 3 to 6 best repositories on your profile.
+2. Every important repo needs a clear README.
+3. README should include: project purpose, features, tech stack, setup steps, and screenshots.
+4. Use meaningful commit messages.
+5. Keep code clean and organized in folders.
+6. Add a .gitignore file.
+7. Show full-stack, backend, frontend, or ML projects based on your target role.
+8. Deploy at least one project if possible.
+9. Avoid uploading only class assignment dumps without explanation.
+10. Add your GitHub link to your CV and LinkedIn.

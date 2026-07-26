@@ -1,0 +1,26 @@
+Useful Skills for IT Internship Roles
+
+Technical skills:
+- Programming fundamentals in Python, Java, or JavaScript
+- Data structures and problem solving
+- Git and GitHub
+- SQL and basic databases
+- Web basics: HTML, CSS, JavaScript
+- APIs and JSON
+- Linux basics
+- Debugging and testing basics
+
+Soft skills:
+- Communication
+- Teamwork
+- Time management
+- Willingness to learn
+- Receiving feedback professionally
+- Writing clear documentation
+
+How to show skills:
+- Projects
+- GitHub repositories
+- Certifications
+- Hackathons or club work
+- Coursework with practical outcomes

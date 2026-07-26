@@ -1,0 +1,12 @@
+Technical Interview Tips for IT Internships
+
+1. Revise fundamentals: variables, loops, functions, OOP, data structures, and databases.
+2. Practice easy-to-medium coding problems on arrays, strings, and hash maps.
+3. Be ready to explain your projects: problem, your role, tech stack, challenges, and results.
+4. Speak while coding. Interviewers want to hear your thinking process.
+5. Ask clarifying questions before solving a problem.
+6. Start with a brute-force approach, then improve it.
+7. Test your solution with sample inputs and edge cases.
+8. Review basic SQL: SELECT, WHERE, JOIN, GROUP BY.
+9. Know Git basics: commit, branch, pull request, merge.
+10. If you do not know an answer, explain how you would find it.

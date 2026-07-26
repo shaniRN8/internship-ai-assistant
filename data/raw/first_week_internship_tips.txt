@@ -1,0 +1,22 @@
+First Week Internship Tips
+
+Day 1 to Day 3:
+- Complete onboarding and access setup
+- Meet your mentor and teammates
+- Learn the project structure and tools
+- Read documentation before changing code
+
+Good habits:
+- Take notes in every meeting
+- Clarify expectations for tasks
+- Ask how success is measured
+- Start with small tickets
+- Introduce yourself politely to the team
+
+Avoid:
+- Staying silent when blocked
+- Pushing code without review
+- Promising deadlines you cannot meet
+
+Goal of week one:
+Understand the environment, ship something small, and build trust.

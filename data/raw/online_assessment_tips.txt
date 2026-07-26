@@ -1,0 +1,20 @@
+Online Assessment Tips for IT Internships
+
+Common assessment types:
+- Aptitude questions
+- Coding challenges
+- Debugging tasks
+- SQL questions
+- Personality or work-style quizzes
+
+Preparation tips:
+1. Practice timed coding problems.
+2. Revise arrays, strings, loops, and conditionals.
+3. Check your internet and power setup before the test.
+4. Read instructions fully before starting.
+5. Manage time. Do not spend too long on one question.
+6. Write clean and readable code.
+7. Test with sample cases.
+8. Avoid switching tabs if proctoring is enabled.
+9. Stay calm if a question looks unfamiliar.
+10. Submit a partial working solution rather than nothing.

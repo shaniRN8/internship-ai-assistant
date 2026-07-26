@@ -1,0 +1,21 @@
+Internship Email Templates
+
+Subject examples:
+- Application for Software Engineering Internship
+- Inquiry About Internship Opportunities - IT Undergraduate
+- Follow-up on Internship Application
+
+Short application email structure:
+1. Greeting
+2. Who you are and your university/year
+3. Why you are interested in the company
+4. Key skills and one project highlight
+5. Attachment note: CV and cover letter
+6. Polite closing
+
+Tips:
+- Keep the email short and professional.
+- Use a formal email address.
+- Name files clearly: FirstName_LastName_CV.pdf
+- Proofread before sending.
+- Follow up once after 7 to 10 days if there is no reply.

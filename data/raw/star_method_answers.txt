@@ -1,0 +1,20 @@
+STAR Method for Internship Interview Answers
+
+STAR means:
+- Situation: brief background
+- Task: what needed to be done
+- Action: what you personally did
+- Result: outcome and learning
+
+Example:
+Question: Tell me about a project challenge.
+Situation: In a group web project, the login feature failed near the deadline.
+Task: I needed to fix authentication and keep the project on schedule.
+Action: I reproduced the bug, reviewed the auth flow, fixed token handling, and tested edge cases.
+Result: Login worked reliably, we submitted on time, and I learned better debugging habits.
+
+Tips:
+- Keep Situation short.
+- Make Action the longest part.
+- Always include a result.
+- Use real student project examples.

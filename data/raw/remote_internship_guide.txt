@@ -1,0 +1,15 @@
+Remote Internship Guide for Students
+
+1. Set up a quiet workspace and stable internet.
+2. Learn the company tools quickly: Slack, Teams, Jira, GitHub, Notion, etc.
+3. Keep your camera-ready for meetings when required.
+4. Write clear daily or weekly updates.
+5. Ask questions early instead of staying blocked.
+6. Manage time zones and meeting schedules carefully.
+7. Over-communicate progress on tasks.
+8. Keep code, notes, and files organized.
+9. Be responsive during agreed working hours.
+10. Build trust by delivering small tasks reliably.
+
+Remote intern tip:
+Document what you did, what is next, and what blockers you have.

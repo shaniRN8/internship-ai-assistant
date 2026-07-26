@@ -1,0 +1,17 @@
+Internship Tips for IT Students in Sri Lanka
+
+1. Start applying early, especially before peak internship seasons.
+2. Check university career office notices and faculty emails.
+3. Use LinkedIn to follow local software companies and startups.
+4. Prepare both a CV and a short cover letter.
+5. Be ready for online assessments and Zoom interviews.
+6. Highlight academic projects if work experience is limited.
+7. Mention teamwork, hackathons, open-source, or volunteer tech work.
+8. Learn practical tools used by local companies: Git, APIs, SQL, cloud basics.
+9. Keep communication professional in email and WhatsApp if recruiters contact you.
+10. Ask about internship mode: on-site, hybrid, or remote.
+
+Useful preparation:
+- One strong project demo
+- GitHub link
+- Clear CV tailored to software, QA, data, or IT support roles
