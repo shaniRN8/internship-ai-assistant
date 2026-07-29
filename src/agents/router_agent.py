@@ -20,7 +20,9 @@ def route_query(user_query):
     
     Intents:
     - cv_help: CV writing, resume tips
-    - interview_help: Interview questions, preparation
+    - cv_analysis: Detailed CV text or document analysis/audit
+    - interview_help: Interview questions, preparation tips
+    - interview_coaching: Mock interview answer evaluation and coaching
     - internship_info: How to apply, internship process
     - cover_letter: Cover letter writing tips
     - general: Other questions
@@ -31,7 +33,9 @@ def route_query(user_query):
     routing_prompt = f"""You are a routing agent for an internship assistant.
 Classify the following user question into ONE of these categories:
 - cv_help
+- cv_analysis
 - interview_help
+- interview_coaching
 - internship_info
 - cover_letter
 - general

@@ -1,10 +1,13 @@
+import os
 from agents.router_agent import route_query
 from agents.rag_worker_agent import process_query
 from agents.reflection_agent import reflect_and_improve
+from agents.cv_analysis_agent import analyze_cv, extract_text_from_pdf
+from agents.interview_coach_agent import generate_mock_questions, evaluate_interview_answer
 
 def run_pipeline(user_question):
     """
-    Full Agentic Pipeline:
+    Full RAG Agentic Pipeline:
     User → Router → RAG Worker → Reflection → Final Answer
     """
     
@@ -33,6 +36,27 @@ def run_pipeline(user_question):
     print(f"\n✨ Final Answer:\n{final_output['final_answer']}")
     
     return final_output
+
+def run_cv_analysis(cv_input, target_role="IT Intern"):
+    """
+    Run dedicated CV Analysis Agent workflow.
+    cv_input can be a text string or a PDF file object/path.
+    """
+    if isinstance(cv_input, str):
+        if cv_input.lower().endswith(".pdf") and os.path.exists(cv_input):
+            cv_text = extract_text_from_pdf(cv_input)
+        else:
+            cv_text = cv_input
+    else:
+        cv_text = extract_text_from_pdf(cv_input)
+
+    return analyze_cv(cv_text, target_role=target_role)
+
+def run_interview_coach(question, user_answer, target_role="IT Intern"):
+    """
+    Run dedicated Interview Coach Agent workflow.
+    """
+    return evaluate_interview_answer(question, user_answer, target_role=target_role)
 
 # Test
 if __name__ == "__main__":
