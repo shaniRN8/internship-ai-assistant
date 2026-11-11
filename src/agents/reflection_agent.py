@@ -7,10 +7,10 @@ load_dotenv()
 def create_reflection_agent():
     """Create Reflection Agent using Groq"""
     llm = ChatGroq(
-        model_name="llama-3.1-8b-instant",
-        temperature=0.2,
-        api_key=os.getenv("GROQ_API_KEY")
-    )
+    model_name="llama-3.3-70b-versatile",
+    temperature=0,
+    api_key=os.getenv("GROQ_API_KEY")
+)
     return llm
 
 def reflect_and_improve(worker_output):
