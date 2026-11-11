@@ -10,11 +10,11 @@ load_dotenv()
 
 def create_cv_analysis_agent():
     """Create CV Analysis Agent using high-capacity Groq model"""
-    llm = ChatGroq(
-        model_name="llama-3.3-70b-versatile",
-        temperature=0.2,
-        api_key=os.getenv("GROQ_API_KEY")
-    )
+   llm = ChatGroq(
+    model_name="llama-3.3-70b-versatile",
+    temperature=0,
+    api_key=os.getenv("GROQ_API_KEY")
+)
     return llm
 
 def extract_text_from_pdf(pdf_source):
