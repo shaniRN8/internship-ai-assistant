@@ -8,11 +8,11 @@ load_dotenv()
 
 def create_interview_coach_agent():
     """Create Interview Coach Agent using Groq model"""
-    llm = ChatGroq(
-        model_name="llama-3.3-70b-versatile",
-        temperature=0.3,
-        api_key=os.getenv("GROQ_API_KEY")
-    )
+   llm = ChatGroq(
+    model_name="llama-3.3-70b-versatile",
+    temperature=0,
+    api_key=os.getenv("GROQ_API_KEY")
+)
     return llm
 
 def generate_mock_questions(target_role="IT Intern", category="Behavioral", count=3):
