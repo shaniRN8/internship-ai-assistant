@@ -7,11 +7,11 @@ load_dotenv()
 
 def create_router_agent():
     """Create Router Agent using fast Groq model"""
-    llm = ChatGroq(
-        model_name="llama-3.1-8b-instant",
-        temperature=0,
-        api_key=os.getenv("GROQ_API_KEY")
-    )
+    lllm = ChatGroq(
+    model_name="llama-3.3-70b-versatile",
+    temperature=0,
+    api_key=os.getenv("GROQ_API_KEY")
+)
     return llm
 
 def route_query(user_query):
