@@ -9,7 +9,7 @@ from agents.rag_worker_agent import load_vector_store
 load_dotenv()
 
 
-  def create_cv_analysis_agent():
+def create_cv_analysis_agent():
     llm = ChatGroq(
         model_name="llama-3.3-70b-versatile",
         temperature=0,
